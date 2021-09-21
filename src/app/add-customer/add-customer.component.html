@@ -1,0 +1,75 @@
+<div class="gray-bg dashbard-1">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+                <h1 class="logo-name">2M</h1>
+            </div>
+            <h3>Add New Customer</h3>
+            <div role="alert" *ngIf="f.submitted && !isAddCustomerFailed" class="alert alert-success">{{sucessMessage}}</div>
+           
+              <form class="m-t" role="form"
+                          name="form"
+                          (ngSubmit)="f.form.valid && onSubmit()"
+                          #f="ngForm"
+                          novalidate
+                        >
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Customer Name" 
+                    [(ngModel)]="form.name" 
+                    name="Customer Name"
+                    required
+                    #name="ngModel"
+                    > 
+                    <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="name.errors && f.submitted"
+          >
+            Customer Name is required!
+          </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Address" 
+                                      [(ngModel)]="form.address" 
+                                      name = "Address"
+                                      required
+                                      #address="ngModel">
+                                  </div>
+                                  <div
+                                  class="alert alert-danger"
+                                  role="alert"
+                                  *ngIf="address.errors && f.submitted"
+                                >
+                                  <div *ngIf="address.errors.required">Address is required</div>
+                                  
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Mobile" 
+                                      [(ngModel)]="form.mobile" 
+                                      name = "Mobile"
+                                      required
+                                      #mobile="ngModel">
+                                  </div>
+                                  <div
+                                  class="alert alert-danger"
+                                  role="alert"
+                                  *ngIf="mobile.errors && f.submitted"
+                                >
+                                  <div *ngIf="mobile.errors.required">Mobile is required</div>
+                                  
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">Create</button>
+                <div
+                class="alert alert-danger"
+                role="alert"
+                *ngIf="f.submitted && isAddCustomerFailed"
+              >
+              Add Customer is failed: {{ errorMessage }}
+              </div>
+               
+            </form>
+            
+        </div>
+    </div>
+    </div>

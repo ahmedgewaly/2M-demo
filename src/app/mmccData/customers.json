@@ -1,0 +1,52 @@
+ [{
+        "id":1,
+        "name":"HP",
+        "address":"Giza",
+        "mobile":"0125322225",
+        "invoices":[{
+            "id":1,
+            "name":"Jan",
+            "description":"prenters",
+            "vatPercentage":"14%",
+            "vatAmount":"14",
+            "total":"100",
+            "grandTotal":"114"
+            }, {
+                "id":2,
+                "name":"Feb",
+                "description":"Routers",
+                "vatPercentage":"14%",
+                "vatAmount":"14",
+                "total":"150",
+                "grandTotal":"171"
+                }
+        
+        ]
+    },
+
+    {
+        "id":2,
+        "name":"IBM",
+        "address":"Cairo",
+        "mobile":"010053233387",
+        "invoices":[{
+            "id":1,
+            "name":"Jan",
+            "description":"Screens",
+            "vatPercentage":"14%",
+            "vatAmount":"14",
+            "total":"100",
+            "grandTotal":"114"
+            }, {
+                "id":2,
+                "name":"Feb",
+                "description":"Laptops",
+                "vatPercentage":"14%",
+                "vatAmount":"14",
+                "total":"150",
+                "grandTotal":"171"
+                }
+        
+        ]
+    }
+ ]

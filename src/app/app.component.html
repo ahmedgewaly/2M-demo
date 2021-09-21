@@ -1,0 +1,17 @@
+
+<div id="wrapper" >
+    <app-leftmenu *ngIf="isLoggedIn"></app-leftmenu>
+    
+    <div id="page-wrapper" class="gray-bg dashbard-1" *ngIf="!isLoggedIn" style="width:100%;">
+        
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </div>
+    <div id="page-wrapper" class="gray-bg dashbard-1" *ngIf="isLoggedIn">
+        
+        <app-header></app-header>
+        <router-outlet></router-outlet>
+        <app-footer></app-footer>
+    </div>
+</div>     
