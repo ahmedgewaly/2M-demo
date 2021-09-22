@@ -17,7 +17,9 @@ export class AppComponent {
 
   username?: string;
 
-  constructor(private tokenStorageService: TokenStorageService, private router: Router) { }
+  constructor(private tokenStorageService: TokenStorageService, private router: Router) {
+    // $('#mmccRoot').hide();
+   }
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -33,6 +35,8 @@ export class AppComponent {
 
       this.router.navigate(['dashboard']);
     }
+
+    // $('#mmccRoot').show();
   }
 
   logout(): void {
@@ -43,5 +47,10 @@ export class AppComponent {
   getUser():any{
     return this.tokenStorageService.getUser();
   }
+
+  saveUser(user:any):any{
+    return this.tokenStorageService.saveUser(user);
+  }
+
 
 }

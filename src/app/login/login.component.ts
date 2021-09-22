@@ -75,7 +75,8 @@ if(username == 'admin' && password == 'admin1'){
       username:"ahmed",
       passowrd:"hashPass",
       accessToken:"Asw#$kjhdm$km89",
-      roles:['ROLE_USER']
+      roles:['ROLE_USER'],
+      showGreeting:true,
       };
   }
 }

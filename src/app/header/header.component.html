@@ -1,5 +1,6 @@
 <div class="row border-bottom">
     <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+
     <div class="navbar-header">
         <a  *ngIf="isLoggedIn" class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
         <!-- <form role="search" class="navbar-form-custom" action="search_results.html">
@@ -128,3 +129,20 @@
 
     </nav>
     </div>
+
+
+<!--breadcrumb -->
+<div *ngIf="isLoggedIn" class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <!-- <h2>Spinners</h2> -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/dashboard" class="nav-link" routerLink="dashboard">Go Home</a>
+            </li>
+            
+        </ol>
+    </div>
+    <div class="col-lg-2">
+
+    </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 
+declare function loadDashboard(data:any) : any;
 declare var toastr: any;
 @Component({
   selector: 'app-dashboard',
@@ -12,10 +13,18 @@ export class DashboardComponent implements OnInit {
   user ?: any;
   constructor(public myapp: AppComponent) { 
     this.user = this.myapp.getUser();
+    
   }
 
   ngOnInit(): void {
-    toastr.success('Welcome back ' + this.user.username, '2M - Customs Clearance', );
+    if(this.user.showGreeting){
+      loadDashboard(this.user.username);
+      this.user.showGreeting = false;
+      this.myapp.saveUser(this.user);
+    }
+    
+    
+    
   }
 
 }
