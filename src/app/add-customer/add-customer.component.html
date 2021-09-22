@@ -6,67 +6,64 @@
                 <h1 class="logo-name">2M</h1>
             </div>
             <h3>Add New Customer</h3>
-            <div role="alert" *ngIf="f.submitted && !isAddCustomerFailed" class="alert alert-success">{{sucessMessage}}</div>
-           
               <form class="m-t" role="form"
                           name="form"
-                          (ngSubmit)="f.form.valid && onSubmit()"
+                          (ngSubmit)="onSubmit(f)"
                           #f="ngForm"
-                          novalidate
-                        >
-                <div class="form-group">
+                          novalidate>
+                        
+                <div class="form-group" [ngClass]="{'has-error':name.errors && f.submitted}">
                     <input type="text" class="form-control" placeholder="Customer Name" 
                     [(ngModel)]="form.name" 
-                    name="Customer Name"
+                    name="name"
                     required
-                    #name="ngModel"
-                    > 
-                    <div
-            class="alert alert-danger"
-            role="alert"
-            *ngIf="name.errors && f.submitted"
-          >
-            Customer Name is required!
-          </div>
+                    #name="ngModel">
+                    <!-- <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="name.errors && f.submitted"
+                    >
+                      Customer Name is required!
+                    </div> -->
                 </div>
-                <div class="form-group">
+                <div class="form-group" [ngClass]="{'has-error':address.errors && f.submitted}">
                     <input type="text" class="form-control" placeholder="Address" 
                                       [(ngModel)]="form.address" 
                                       name = "Address"
                                       required
                                       #address="ngModel">
                                   </div>
-                                  <div
+                                  <!-- <div
                                   class="alert alert-danger"
                                   role="alert"
                                   *ngIf="address.errors && f.submitted"
                                 >
                                   <div *ngIf="address.errors.required">Address is required</div>
                                   
-                </div>
-                <div class="form-group">
+                               </div> -->
+                <div class="form-group" [ngClass]="{'has-error':mobile.errors && f.submitted}">
                     <input type="text" class="form-control" placeholder="Mobile" 
                                       [(ngModel)]="form.mobile" 
                                       name = "Mobile"
                                       required
                                       #mobile="ngModel">
                                   </div>
-                                  <div
+                                  <!-- <div
                                   class="alert alert-danger"
                                   role="alert"
                                   *ngIf="mobile.errors && f.submitted"
                                 >
                                   <div *ngIf="mobile.errors.required">Mobile is required</div>
                                   
-                </div>
+                </div> -->
                 <button type="submit" class="btn btn-primary block full-width m-b">Create</button>
-                <div
+                <!-- <div
                 class="alert alert-danger"
                 role="alert"
                 *ngIf="f.submitted && isAddCustomerFailed"
               >
               Add Customer is failed: {{ errorMessage }}
-              </div>
+              </div> -->
                
             </form>
             
