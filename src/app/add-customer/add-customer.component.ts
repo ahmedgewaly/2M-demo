@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FileSaverService } from 'ngx-filesaver';
 import { CustomerService } from '../_services/customer.service';
+import{ GlobalConstants } from '../_common/global-constants';
 
 declare var toastr: any;
 
@@ -19,7 +20,7 @@ export class AddCustomerComponent implements OnInit {
   isAddCustomerFailed = false;
   errorMessage = '';
   sucessMessage = '';
-  messageTitle= '2M - Customs Clearance';
+
   constructor(private fileSaverService: FileSaverService, private customerService: CustomerService) { }
 
   ngOnInit(): void {
@@ -28,7 +29,7 @@ export class AddCustomerComponent implements OnInit {
   onSubmit(f: NgForm): void {
     const { name, address, mobile } = this.form;
     if(f.form.valid){
-      console.log('Saving Customer =>'+this.form.name);
+      console.log('Saving Customer =>' + this.form.name);
       this.saveCustomer(this.form);
     }else{
       if(f.form.value.name == null){
@@ -44,7 +45,7 @@ export class AddCustomerComponent implements OnInit {
     
   }
   showRequiredError(filedName: string){
-    toastr.error('Customer '+filedName+' is required!', this.messageTitle);
+    toastr.error('Customer '+ filedName + ' is required!', GlobalConstants.siteTitle);
   }
 
 
@@ -55,12 +56,12 @@ export class AddCustomerComponent implements OnInit {
       next: data => {
         this.sucessMessage = data;
 
-        toastr.success(data, this.messageTitle);
+        toastr.success(data, GlobalConstants.siteTitle);
       },
       error: error => {
           this.isAddCustomerFailed = true;
           this.errorMessage = error;
-          toastr.error('Add Customer is failed: ' + error.statusText, this.messageTitle);
+          toastr.error('Add Customer is failed: ' + error.statusText, GlobalConstants.siteTitle);
       }
   });
   }

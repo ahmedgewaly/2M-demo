@@ -4,7 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import customers from '../mmccData/customers.json';
 import { CustomerService } from '../_services/customer.service';
 
+import{ GlobalConstants } from '../_common/global-constants';
+
 declare function loadDataTable() : any;
+declare var toastr: any;
+
 
 @Component({
   selector: 'app-invoices',
@@ -38,7 +42,8 @@ export class InvoicesComponent implements OnInit {
         this.customer = data.find((c: { id: string | number; })=> c.id == customerId);
       },
       error: error => {
-          alert('There was an error! '+ JSON.stringify(error));
+          // alert('There was an error! '+ JSON.stringify(error));
+          toastr.error('Failed to load Invoices for '+this.customer?.name+ ': ' + error.statusText, GlobalConstants.siteTitle);
       }
   });
   }

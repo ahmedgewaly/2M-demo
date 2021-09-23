@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../_services/customer.service';
 import customers from '../mmccData/customers.json';
+import{ GlobalConstants } from '../_common/global-constants';
+
 declare function loadDataTable() : any;
+declare var toastr: any;
 
 @Component({
   selector: 'app-customers',
@@ -30,7 +33,8 @@ export class CustomersComponent implements OnInit {
         this.customerList = data;
       },
       error: error => {
-        alert('There was an error! ' + JSON.stringify(error));
+        // alert('There was an error! ' + JSON.stringify(error));
+        toastr.error('Failed to load Customers: ' + error.statusText, GlobalConstants.siteTitle);
       }
     });
   }

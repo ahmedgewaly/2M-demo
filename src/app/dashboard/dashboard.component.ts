@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AppComponent } from '../app.component';
 
 declare function loadDashboard(data:any) : any;
-declare var toastr: any;
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
