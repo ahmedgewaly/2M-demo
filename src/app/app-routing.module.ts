@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 import { AppComponent } from './app.component';
 import { CustomersComponent } from './customers/customers.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path: 'createcustomer', component: AddCustomerComponent},
   {path: 'customers/invoices', component: InvoicesComponent},
   {path: 'customers/invoices/invoiceDetails', component: InvoiceDetailsComponent},
+  {path: 'customers/invoices/addInvoice', component: AddInvoiceComponent},
   {path: 'customers/invoices/printInvoice', component: PrintInvoiceComponent},
   { path: '', redirectTo: 'mmcc', pathMatch: 'full' }
   

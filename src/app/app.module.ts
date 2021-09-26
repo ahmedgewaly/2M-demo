@@ -21,6 +21,7 @@ import { InvoicesComponent } from './invoices/invoices.component';
 import { PrintInvoiceComponent } from './print-invoice/print-invoice.component';
 import { InvoiceDetailsComponent } from './invoice-details/invoice-details.component';
 import { AddCustomerComponent } from './add-customer/add-customer.component';
+import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AddCustomerComponent } from './add-customer/add-customer.component';
     InvoicesComponent,
     PrintInvoiceComponent,
     InvoiceDetailsComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    AddInvoiceComponent
   ], 
   imports: [
     BrowserModule,
